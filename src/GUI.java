@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -48,8 +49,17 @@ public class GUI extends Application {
         }
         if(tris.gameStatus() == "x"){
             //TODO alert box
+            alert("Vittoria", "si", "Vince x");
         } else if (tris.gameStatus() == "0" && tris.IsGameOver()) {
             //TODO alert box
+            alert("Pareggio", "si", "Pareggio");
         }
+    }
+
+    private void alert(String title, String header, String message){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(message);
     }
 }
