@@ -46,5 +46,10 @@ public class GUI extends Application {
         if(tris.place(x,y)) {
             buttons[x][y].setText(String.valueOf(tris.getLastPlayer()));
         }
+        if(tris.gameStatus() == "x"){
+            //TODO alert box
+        } else if (tris.gameStatus() == "0" && tris.IsGameOver()) {
+            //TODO alert box
+        }
     }
 }
